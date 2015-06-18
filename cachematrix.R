@@ -3,10 +3,11 @@
 ## It will only solve the inverse matrix again, if the original matrix 
 ## has been changed since the previous calculation.
 
-## makeCacheMatrix takes a square matrix as input and stores this.
+## 'makeCacheMatrix'-function takes a square matrix as input and stores this.
 ## When makeCacheMatrix is assigned to an object, the object will contain
 ## the 4 functions 'set', 'get', 'setim' and 'getim'.
 ## These functions can then be used e.g. like [objectname]$get() to get stored matrix
+
 makeCacheMatrix <- function(x = matrix()) {
         ## Clear cached inverse matrix:
     im <- NULL
@@ -32,6 +33,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cacheSolve returns an inverse matrix of the invertible matrix stored in 'x'
 ## But it will first check if there is an inverse matrix stored in cache.
 ## This will prevent unnecessary re-calculations of the inverse matrix.
+
 cacheSolve <- function(x, ...) {
         ## Get the cached inverse matrix (im), if possible.
     im <- x$getim()
